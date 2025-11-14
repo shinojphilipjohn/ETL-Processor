@@ -1,0 +1,65 @@
+ETL PROCESSOR ENGINE
+
+Notes
+
+select * from employees;
+
+create table employees(
+emp_id INTEGER not null,
+first_name VARCHAR(50) not null,
+last_name VARCHAR(50) not null,
+birth_date date not null,
+gender char(1) not null,
+location VARCHAR(50),
+record_update_ts DATETIME,
+active_record_flag char(1),
+primary key(emp_id)
+);
+
+alter table employees modify column active_record_flag integer;
+
+insert into employees (emp_id,first_name,last_name,birth_date,gender,location,record_update_ts,active_record_flag) values
+(1,"John","Philip","1990-01-01","M","Europe",sysdate(),1);
+
+insert into employees (emp_id,first_name,last_name,birth_date,gender,location,record_update_ts,active_record_flag) values
+(2,"Ethan","Ryan","1992-04-22","M","USA",sysdate(),1);
+
+insert into employees (emp_id,first_name,last_name,birth_date,gender,location,record_update_ts,active_record_flag) values
+(3,"James","Holden","1978-07-12","M","UAE",sysdate(),1);
+
+insert into employees (emp_id,first_name,last_name,birth_date,gender,location,record_update_ts,active_record_flag) values
+(4,"Ishan","Antony","1996-09-02","M","USA",sysdate(),1);
+
+insert into employees (emp_id,first_name,last_name,birth_date,gender,location,record_update_ts,active_record_flag) values
+(5,"Jonathan","Dias","1999-03-09","M","India",sysdate(),1);
+
+insert into employees (emp_id,first_name,last_name,birth_date,gender,location,record_update_ts,active_record_flag) values
+(6,"Ajay","Sreekumar","1998-03-05","M","India",sysdate(),1);
+
+insert into employees (emp_id,first_name,last_name,birth_date,gender,location,record_update_ts,active_record_flag) values
+(7,"Sajeevan","RS","1997-08-29","M","India",sysdate(),1);
+
+insert into employees (emp_id,first_name,last_name,birth_date,gender,location,record_update_ts,active_record_flag) values
+(8,"Shinoj","John","1998-12-05","M","Australia",sysdate(),1);
+
+insert into employees (emp_id,first_name,last_name,birth_date,gender,location,record_update_ts,active_record_flag) values
+(9,"Catherine","Brooke","1995-05-09","F","Europe",sysdate(),1);
+
+insert into employees (emp_id,first_name,last_name,birth_date,gender,location,record_update_ts,active_record_flag) values
+(10,"Mary","Varghese","1965-08-11","F","India",sysdate(),1);
+
+insert into employees (emp_id,first_name,last_name,birth_date,gender,location,record_update_ts,active_record_flag) values
+(11,"Priya","Nair","1960-09-19","F","UAE",sysdate(),1);
+
+
+
+salary.csv
+
+DB
+Mysqlwork@123
+100.103.161.43
+
+RUN:
+
+cd ETL Processor
+python etl_engine.py C:\Users\shino\ETL --verbose
